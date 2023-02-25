@@ -15,16 +15,15 @@ public class Homework02 {
         if (n > 1) {
             System.out.println("Введите последовательность: ");
             int num1 = scanner.nextInt();
-            int num2 = 0;
+            Integer num2 = null;
             boolean checkMore;
-            int i = 1;
             do {
-                if (i > 1) num1 = num2;
+                if (num2 != null) num1 = num2;
+                n--;
                 num2 = scanner.nextInt();
-                i++;
                 checkMore = num1 < num2;
             }
-            while (checkMore && i < n);
+            while (checkMore && n > 1);
             scanner.close();
             if (checkMore) System.out.println("Возрастает");
             else System.out.println("Не возрастает");
